@@ -23,4 +23,9 @@ app.get("/json", (req, res) => {
     res.json({ "message": message });
 });
 
+app.get("/", (req,res,next) => {
+    console.log(req.method + " " + req.path + " - " + req.ip);
+    next();
+})
+
 module.exports = app;
