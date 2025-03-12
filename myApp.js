@@ -29,6 +29,14 @@ app.get("/:word/echo", (req,res) => {
     res.json({"echo": req.params.word})
 });
 
+app.get("/name", (req,res) => {
+
+    let firstName = req.query.first;
+    let lastName = req.query.last;
+
+    res.json({"name": `${firstName} ${lastName}`});
+});
+
 app.get("/json", (req, res) => {
     let message = "Hello json";
 
